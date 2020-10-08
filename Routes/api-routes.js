@@ -4,9 +4,6 @@
 
 // Dependencies
 // =============================================================
-
-// grab the orm from the config
-// (remember: connection.js -> orm.js -> route file)
 var path = require("path");
 var db = require("../models");
 
@@ -15,22 +12,27 @@ var db = require("../models");
 module.exports = function(app) {
 
   
-//servers the home html page
+//serves the home html page
   app.get("/", function(req, res) {
-    res.sendFile("public/assets/html/home.html");
+    res.sendFile(path.join(__dirname, "../public/assets/html/home.html"));
   });
 
+//   app.get("https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast", function(req, res) {
+//  console.log(res)
+//   });
+
   
-
-  // // GET route for getting all of the todos
-  // app.get("/api/todos", function(req, res) {
-  //   //console.log(db)
-  //   db.toDoList.findAll({}).then(function(results) {
-  //     res.json(results);
-  //   });
-  // });
-
-
+  
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast"
+  
+                                $.ajax({
+                                        url: queryURL,
+                                        method: "GET"
+                                        })
+                                .then(function(response) {
+                                       console.log(response)
+                                })
+                                          
   // // POST route for saving a new todo. We can create a todo using the data on req.body
   // app.post("/api/todos", function(req, res) {
   //   console.log("toDo Item:");
@@ -64,4 +66,4 @@ module.exports = function(app) {
   //     res.json(results);
   //   });
   // });
-};
+}
