@@ -51,7 +51,11 @@ function ajaxCallRecipe(mealID) {
       // result = JSON.stringify(result)
       // result = JSON.parse(result)
       console.log(result.meals);
+      $("#image-div").empty();
       document.getElementById("recipeDetail").style.display="block";
+      
+      
+      $("#image-div").append(foodImg);
       $(".card-header").html(result.meals[0].strMeal);
 
       $(".card-text").html(result.meals[0].strInstructions);
@@ -68,7 +72,12 @@ function randomRecipe() {
       // result = JSON.stringify(result)
       // result = JSON.parse(result)
       console.log(result)
+      $("#image-div").empty();
+      var foodImg = $("<img>")
+      .attr("src", result.meals[0].strMealThumb).addClass("food-image");
       document.getElementById("recipeDetail").style.display="block";
+      $("#image-div").append(foodImg);
+      
       $(".card-header").html(result.meals[0].strMeal);
 
       $(".card-text").html(result.meals[0].strInstructions);
