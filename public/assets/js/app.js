@@ -18,15 +18,15 @@ function ajaxCallSearch(userInput) {
 
       for (let j = 0; j < 3; j++) {
 
-        //console.log(result.meals[Math.floor(Math.random() * 11)], "line 16");      
-        //console.log(result.meals[Math.floor(Math.random() * 11)].strMeal, "IdMeal");
-
+        console.log(result.meals[Math.floor(Math.random() * 11)], "line 16");      
+        console.log(result.meals[Math.floor(Math.random() * 11)].strMeal, "IdMeal");
+        
         console.log(result.meals[j].strMeal);
         console.log(result.meals[j].idMeal);
-
+        let randomNumber = [Math.floor(Math.random() * 11)]
         let mealTile = $("<a>");
-        let mealName = result.meals[j].strMeal;
-        let mealID = result.meals[j].idMeal;
+        let mealName = result.meals[randomNumber].strMeal;
+        let mealID = result.meals[randomNumber].idMeal;
 
         mealTile.attr("href", "#!");
         mealTile.addClass("list-group-item list-group-item-action");

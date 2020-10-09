@@ -12,11 +12,11 @@
 
     <link rel="stylesheet" href="../css/styles.css">
 
-    <title>Home</title>
+    <title>Recipe</title>
 
 </head>
 
-<body>
+<body onload="ajaxCallRecipe()">
 
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-light"></nav>
@@ -41,37 +41,23 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">What's Cookin'?</h1>
-            <p class="lead">Kitchen inspiration... Search by ingredients to find the perfect recipe.</p>
-            <div class="form-group">
-                <label for="searchIngredients">SEARCH</label>
-                <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken Breast">
-            </div>
-            <button id = "search" type="submit" class="btn btn-primary btn-lg">Search</button>
+
+            <div class="card">
+                <div class="card-header">
+                  Recipe title
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Ingredients</h5>
+                  <p class="card-text">Step-by-step instructions</p>
+
+                </div>
+              </div>
+
 
             <br><br>
 
             <div id="searchResults">
                 <ul class="list-group"></ul>
-            </div>
-                
-           <br><br>
-
-            
-
-            <div id="recipeDetail" style="display: none;">
-                <div class="card">
-                    <div class="card-header">
-                      Recipe title
-                    </div>
-                    <div class="card-body">
-                    <div id="image-div"></div>
-                      <h5 class="card-title">Ingredients List...</h5>
-                      <h5 class="card-title">Instructions:</h5>
-                      <p class="card-text">Step-by-step instructions</p>
-    
-                    </div>
-                  </div>
             </div>
                 
             <br>
@@ -84,7 +70,7 @@
                 <br><br>
 
             <p>Need inspiration? Pull up a random recipe.</p>
-            <a class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
+            <a class="btn btn-info btn-lg" href="#" role="button">Random</a>
             </p>
         </div>
     </div>
