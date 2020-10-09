@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Welcomenow12345",
+    "database": "whatscookin_db",
+    "host": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "todo",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "todo",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

@@ -49,7 +49,30 @@
             </div>
             <button id = "search" type="submit" class="btn btn-primary btn-lg">Search</button>
 
-            <br><br><br><br>
+            <br><br>
+
+            <div id="searchResults">
+                <ul class="list-group"></ul>
+            </div>
+                
+            <br>
+            <br><br>
+
+            <div id="recipeDetail" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                      Recipe title
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Ingredients List...</h5>
+                      <h5 class="card-title">Instructions:</h5>
+                      <p class="card-text">Step-by-step instructions</p>
+    
+                    </div>
+                  </div>
+            </div>
+                
+            <br>
 
             <p>Find nutrition information or leave reviews for your favorite recipes.</p>
             <p class="lead">
@@ -59,7 +82,7 @@
                 <br><br>
 
             <p>Need inspiration? Pull up a random recipe.</p>
-            <a class="btn btn-info btn-lg" href="#" role="button">Random</a>
+            <a class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
             </p>
         </div>
     </div>
@@ -118,6 +141,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="../js/app.js"></script>
 </body>
 

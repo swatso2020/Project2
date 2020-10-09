@@ -1,6 +1,4 @@
 var express = require("express");
-// var path = require("path");
- //const fs = require('fs');
 
 // Sets up the Express App
 // =============================================================
@@ -16,13 +14,14 @@ app.use(express.json());
 app.use(express.static("./assets/html"));
 
 require("./routes/api-routes.js")(app);
-//var db = require("./models");
+require("./routes/api-routes.js")(app);
+var db = require("./models");
 
 
 
-//db.sequelize.sync().then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
- // });
+  });
   
