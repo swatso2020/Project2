@@ -51,6 +51,11 @@ function ajaxCallRecipe(mealID) {
       // result = JSON.stringify(result)
       // result = JSON.parse(result)
       // console.log(result.meals, 'line 53');
+      $("#image-div").empty();
+      var foodImg = $("<img>")
+      .attr("src", result.meals[0].strMealThumb).addClass("food-image");
+      document.getElementById("recipeDetail").style.display="block";
+      $("#image-div").append(foodImg);
 
       $(".card-header").html(result.meals[0].strMeal);
 
