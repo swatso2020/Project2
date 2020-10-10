@@ -25,9 +25,7 @@ function getRecipie () {
   connection.query("select * from whatscookin_db.favoriteMeals", function(err, res) {
     if (err) throw err;
       console.log("Here are all the departments");
-                  console.table(res);  
-                  
-                             
+                  console.table(res);                           
   })    
  
   }

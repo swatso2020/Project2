@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express");
 
 // Sets up the Express App

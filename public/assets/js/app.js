@@ -88,7 +88,7 @@ function getFavRecipies() {
   });
 }
 
-saveRecipe()
+
 
 //this function will be used to push a recipie to the database if the user wants to keep
 function saveRecipe() {
