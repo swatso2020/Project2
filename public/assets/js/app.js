@@ -62,19 +62,11 @@ function ajaxCallRecipe(mealID) {
     url: ajaxCall, success: function (result) {
       // result = JSON.stringify(result)
       // result = JSON.parse(result)
-<<<<<<< HEAD
-      // console.log(result.meals, 'line 53');
-      $("#image-div").empty();
-      var foodImg = $("<img>")
-      .attr("src", result.meals[0].strMealThumb).addClass("food-image");
-      document.getElementById("recipeDetail").style.display="block";
-=======
       //console.log(result.meals);
       $("#image-div").empty();
       var foodImg = $("<img>")
         .attr("src", result.meals[0].strMealThumb).addClass("food-image");
       document.getElementById("recipeDetail").style.display = "block";
->>>>>>> d41f16625e7f22619e5ccbdee058067d8adc2d8a
       $("#image-div").append(foodImg);
 
       $("#recipeTitle").html(result.meals[0].strMeal);
