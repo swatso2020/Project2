@@ -39,5 +39,13 @@
   "bugs": {
     "url": "https://github.com/swatso2020/Project2/issues"
   },
-  "homepage": "https://github.com/swatso2020/Project2#readme"
+  "homepage": "https://github.com/swatso2020/Project2#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
 }
