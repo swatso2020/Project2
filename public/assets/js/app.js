@@ -25,13 +25,6 @@ function ajaxCallSearch(userInput) {
 
       for (let j = 0; j < 3; j++) {
 
-        //console.log(result.meals[Math.floor(Math.random() * 11)], "line 16");      
-        //console.log(result.meals[Math.floor(Math.random() * 11)].strMeal, "IdMeal");
-        //console.log(result.meals[j].strMeal);
-        //console.log(result.meals[j].idMeal);
-
-        console.log(result.meals[Math.floor(Math.random() * 11)], "line 16");      
-        console.log(result.meals[Math.floor(Math.random() * 11)].strMeal, "IdMeal");
         
         console.log(result.meals[j].strMeal);
         console.log(result.meals[j].idMeal);
@@ -45,7 +38,7 @@ function ajaxCallSearch(userInput) {
         mealTile.html(mealName);
         mealTile.attr("onclick", "ajaxCallRecipe('" + mealID + "')");
 
-        //  https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
+        // https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
 
         $("#recipeList").append(mealTile);
 
@@ -55,6 +48,14 @@ function ajaxCallSearch(userInput) {
 }
 
 function ajaxCallRecipe(mealID) {
+  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`;
+  $.ajax({
+
+    url: ajaxCall, success: function (result) {
+
+      $(".card-header").html(result.meals[0].strMeal);
+      console.log(result, 'line 50')
+      $(".card-text").html(result.meals[0].strInstructions);
   //console.log(mealID);
   let ajaxCall = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
   $.ajax({
