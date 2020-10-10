@@ -88,19 +88,31 @@ function getFavRecipies() {
   });
 }
 
+saveRecipe()
 
 //this function will be used to push a recipie to the database if the user wants to keep
 function saveRecipe() {
-  //api from meal database that returns a random meal with 
-  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/random.php`
-  $.ajax({
-    type: "POST",
-    url: ajaxCall,
-    data: data,
-    success: success,
-    dataType: dataType
-  }).then();
-  console.log
-};
 
+//   //api from meal database that returns a random meal with 
+  let ajaxCall = `https://cors-anywhere.herokuapp.com/http://www.themealdb.com/api/json/v1/1/random.php`
+  $.ajax({
+    type: "GET",
+    url: ajaxCall,
+  })
+  .then(function(response) {   
+    var userRecipies = {
+      mealid: response.meals[0].idMeal,
+      mealname: response.meals[0].strMeal,
+      mealcategory: response.meals[0].strCategory
+    };
+    var test = {
+      mealid: "1",
+      mealname: "test",
+      mealcategory: "browser"
+    };
+    console.log(userRecipies)
+   $.post("/api/favRecipie", test);
+  // console.log(userRecipie)
+});
+};
 
