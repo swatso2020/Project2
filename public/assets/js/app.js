@@ -32,7 +32,7 @@ function ajaxCallSearch(userInput) {
         mealTile.html(mealName);
         mealTile.attr("onclick", "ajaxCallRecipe('" + mealID + "')");
 
-        //  https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
+        // https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
 
         $(".list-group").append(mealTile);
 
@@ -57,7 +57,7 @@ function ajaxCallRecipe(mealID) {
         if (result.meals[0][`strIngredient${i}`] === "") {
           console.log('created ingredients array of objects with all showing together and stopping at the right time')
           ingredientsDisplay();
-          return
+          break;
         } else {
           ingredients.push({
             name: result.meals[0][`strIngredient${i}`],
