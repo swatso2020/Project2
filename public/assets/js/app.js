@@ -103,7 +103,8 @@ function saveRecipe() {
     var userRecipies = {
       mealid: response.meals[0].idMeal,
       mealname: response.meals[0].strMeal,
-      mealcategory: response.meals[0].strCategory
+      mealcategory: response.meals[0].strCategory,
+      
     };
     var test = {
       mealid: "1",

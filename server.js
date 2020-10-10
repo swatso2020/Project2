@@ -44,7 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static('Project2/public/assets/html'));
+app.use(express.static('public'));
 require("./routes/api-routes.js")(app);
 
 var db = require("./models");
