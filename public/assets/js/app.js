@@ -4,6 +4,7 @@ $("#search").click(function (e) {
   ajaxCallSearch(userInput);
 });
 
+let favRecipes = []
 
 function ajaxCallSearch(userInput) {
   let ajaxCall = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${userInput}`

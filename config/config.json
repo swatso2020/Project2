@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "whats_cookin",
-    "host": "127.0.0.1",
+    "password": "Welcomenow12345",
+    "database": "whatscookin_db",
+    "host": 3306,
     "dialect": "mysql"
   },
   "test": {
