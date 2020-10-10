@@ -1,87 +1,101 @@
-$("#search").click(function (e) {
-  e.preventDefault();
-  let userInput = $("#search-input").val();
-  ajaxCallSearch(userInput);
-});
+// $(document).ready(function () {
+
+  $("#search").click(function (event) {
+    event.preventDefault();
+    let userInput = $("#search-input").val();
+    ajaxCallSearch(userInput);
+  });
+
+  $("#search-input").keypress(function (event) {
+    // if the key pressed is the enter key
+    if (event.which == 13) {
+      $("#search").trigger("click");
+    }
+  });
 
 
-function ajaxCallSearch(userInput) {
-  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${userInput}`
-  $.ajax({
+  function ajaxCallSearch(userInput) {
+    let ajaxCall = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${userInput}`
+    $.ajax({
 
-    url: ajaxCall, success: function (result) {
-      result = JSON.stringify(result)
-      result = JSON.parse(result)
-      console.log(result)
+      url: ajaxCall, success: function (result) {
+        result = JSON.stringify(result)
+        result = JSON.parse(result)
+        console.log(result)
 
-      $(".list-group").empty();
+        $("#recipeList").empty();
 
-      for (let j = 0; j < 3; j++) {
+        for (let j = 0; j < 3; j++) {
 
-        //console.log(result.meals[Math.floor(Math.random() * 11)], "line 16");      
-        //console.log(result.meals[Math.floor(Math.random() * 11)].strMeal, "IdMeal");
+          //console.log(result.meals[Math.floor(Math.random() * 11)], "line 16");      
+          //console.log(result.meals[Math.floor(Math.random() * 11)].strMeal, "IdMeal");
 
-        console.log(result.meals[j].strMeal);
-        console.log(result.meals[j].idMeal);
+          console.log(result.meals[j].strMeal);
+          console.log(result.meals[j].idMeal);
 
-        let mealTile = $("<a>");
-        let mealName = result.meals[j].strMeal;
-        let mealID = result.meals[j].idMeal;
+          let mealTile = $("<a>");
+          let mealName = result.meals[j].strMeal;
+          let mealID = result.meals[j].idMeal;
 
-        mealTile.attr("href", "#!");
-        mealTile.addClass("list-group-item list-group-item-action");
-        mealTile.html(mealName);
-        mealTile.attr("onclick", "ajaxCallRecipe('" + mealID + "')");
+          mealTile.attr("href", "#!");
+          mealTile.addClass("list-group-item list-group-item-action");
+          mealTile.html(mealName);
+          mealTile.attr("onclick", "ajaxCallRecipe('" + mealID + "')");
 
-        //  https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
+          //  https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
 
-        $(".list-group").append(mealTile);
+          $("#recipeList").append(mealTile);
+
+        }
+      }
+    });
+  }
+
+  function ajaxCallRecipe(mealID) {
+    console.log(mealID);
+    let ajaxCall = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
+    $.ajax({
+
+      url: ajaxCall, success: function (result) {
+        // result = JSON.stringify(result)
+        // result = JSON.parse(result)
+        console.log(result.meals);
+        $("#image-div").empty();
+        var foodImg = $("<img>")
+          .attr("src", result.meals[0].strMealThumb).addClass("food-image");
+        document.getElementById("recipeDetail").style.display = "block";
+        $("#image-div").append(foodImg);
+
+        $("#recipeTitle").html(result.meals[0].strMeal);
+
+        $("#instructions").html(result.meals[0].strInstructions);
 
       }
-    }
-  });
-}
+    });
+  }
 
-function ajaxCallRecipe(mealID) {
-  console.log(mealID);
-  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
-  $.ajax({
+  function randomRecipe() {
+    let ajaxCall = `https://www.themealdb.com/api/json/v1/1/random.php`
+    $.ajax({
 
-    url: ajaxCall, success: function (result) {
-      // result = JSON.stringify(result)
-      // result = JSON.parse(result)
-      console.log(result.meals);
-      $("#image-div").empty();
-      var foodImg = $("<img>")
-      .attr("src", result.meals[0].strMealThumb).addClass("food-image");
-      document.getElementById("recipeDetail").style.display="block";
-      $("#image-div").append(foodImg);
-      
-      $(".card-header").html(result.meals[0].strMeal);
+      url: ajaxCall, success: function (result) {
+        // result = JSON.stringify(result)
+        // result = JSON.parse(result)
+        console.log(result)
+        $("#image-div").empty();
+        var foodImg = $("<img>")
+          .attr("src", result.meals[0].strMealThumb).addClass("food-image");
+        document.getElementById("recipeDetail").style.display = "block";
+        $("#image-div").append(foodImg);
 
-      $(".card-text").html(result.meals[0].strInstructions);
-    }
-  });
-}
+        $("#recipeTitle").html(result.meals[0].strMeal);
 
-function randomRecipe() {
-  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/random.php`
-  $.ajax({
+        $("#instructions").html(result.meals[0].strInstructions);
 
-    url: ajaxCall, success: function (result) {
-      // result = JSON.stringify(result)
-      // result = JSON.parse(result)
-      console.log(result)
-      $("#image-div").empty();
-      var foodImg = $("<img>")
-      .attr("src", result.meals[0].strMealThumb).addClass("food-image");
-      document.getElementById("recipeDetail").style.display="block";
-      $("#image-div").append(foodImg);
+      }
+    });
+  }
 
-      $(".card-header").html(result.meals[0].strMeal);
 
-      $(".card-text").html(result.meals[0].strInstructions);
 
-    }
-  });
-}
+// });

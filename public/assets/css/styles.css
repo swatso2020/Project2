@@ -21,8 +21,8 @@
 }
   
 .food-image {
-    width: 35%;
-    height: 35%;
+    width: 60%;
+    height: auto;
     margin-top: -5px;
     margin-bottom: 15px;
     border-radius: 3%;
