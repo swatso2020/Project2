@@ -43,47 +43,116 @@
         <div class="jumbotron">
             <h1 class="display-4">What's Cookin'?</h1>
             <p class="lead">Kitchen inspiration... Search by ingredients to find the perfect recipe.</p>
-            <div class="form-group">
-                <label for="searchIngredients">SEARCH</label>
-                <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken Breast">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        
+                        <label for="searchIngredients">SEARCH</label>
+                        <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken Breast" value="chicken">
+                    </div>
+                    <button id="search" type="submit" class="btn btn-primary btn-lg">Search</button>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <p>Need inspiration? Pull up a random recipe.</p>
+                    <br><br>
+                    <a class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
+                </div>
             </div>
-            <button id = "search" type="submit" class="btn btn-primary btn-lg">Search</button>
 
             <br><br>
 
             <div id="searchResults">
-                <ul class="list-group"></ul>
+                <ul id="recipeList" class="list-group"></ul>
             </div>
-                
+
+
+            <br><br>
+
+            <!-- <div id="recipeDetail" style="display: none;">
+                <div class="card">
+                    <div id="recipeTitle" class="card-header">
+                        Recipe title
+                    </div>
+                    <div class="card-body">
+                        <div id="image-div"></div>
+                        <h5 id="ingredientsTitle" class="card-title">Ingredients List:</h5>
+                        <p id="ingredientsList" class="card-text-ingredients">... Ingredients Placeholder...</p>
+                        <h5 id="instructionsTitle" class="card-title">Instructions:</h5>
+                        <p id="instructions" class="card-text">Step-by-step instructions</p>
+
+                    </div>
+                </div>
+            </div> -->
+
             <br>
             <br><br>
 
+           <br><br>
+
+            
+
+
             <div id="recipeDetail" style="display: none;">
                 <div class="card">
-                    <div class="card-header">
-                      Recipe title
+                    <div id="recipeTitle" class="card-header">
+                        Recipe title
                     </div>
                     <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div id="image-div"></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h5 id="ingredientsTitle" class="card-title">Ingredients List:</h5>
+                                <p class="card-text-ingredients">
+                                    <ul id="ingredientsList">
+                                        <!-- <li>800g Potatoes</li>	
+                                        <li>3 Onions</li>	
+                                        <li>2 tblsp Olive Oil</li>	
+                                        <li>100ml Chicken Stock</li>	
+                                        <li>1 pot Creme Fraiche</li>
+                                        <li>Topping Parmesan</li>	
+                                        <li>4 Chicken Breasts</li>	
+                                        <li>4 Bacon</li>	
+                                        <li>Topping Spinach</li>	
+                                        <li>Topping Peas</li>
+                                    </ul> -->
+                                    
+                                </p>
+                            </div>
+
+
+                        </div>
+
+                        <h5 id="instructionsTitle" class="card-title">Instructions:</h5>
+                        <p id="instructions" class="card-text">Step-by-step instructions</p>
+
+
+                    <div id="image-div"></div>
+
                       <h5 class="card-title">Ingredients List...</h5>
                       <h5 class="card-title">Instructions:</h5>
                       <p class="card-text">Step-by-step instructions</p>
     
+
                     </div>
-                  </div>
+                </div>
             </div>
-                
+
             <br>
 
             <p>Find nutrition information or leave reviews for your favorite recipes.</p>
             <p class="lead">
-                <a class="btn btn-success btn-lg" href="#" role="button">Nutrition</a>
-                <a class="btn btn-warning btn-lg" href="#" role="button">Review</a>
-
+                <a id="nutrition" class="btn btn-success btn-lg" href="#" role="button">Nutrition</a>
+                <a id="review" class="btn btn-warning btn-lg" href="#" role="button">Review</a>
+            </p>
                 <br><br>
 
-            <p>Need inspiration? Pull up a random recipe.</p>
-            <a class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
-            </p>
+
         </div>
     </div>
 
@@ -144,6 +213,10 @@
 
     <script src="assets/js/app.js"></script>
    
+<<<<<<< HEAD
+=======
+
+>>>>>>> 32ab8c6c87ffbafd085a34d79a662aeabfb0ed46
 </body>
 
 </html>

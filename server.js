@@ -20,7 +20,7 @@ const allowedOrigins = [
 
 ];
 
-// Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)
+// Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)git 
 const corsOptions = {
   origin: (origin, callback) => {
     if (allowedOrigins.includes(origin) || !origin) {
