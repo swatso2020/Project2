@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       mealcategory:DataTypes.STRING,
       mealthumb: DataTypes.BOOLEAN,
       mealVideo: DataTypes.STRING,
+      mealInstr: DataTypes.STRING,
       mealIngr1:DataTypes.STRING,
       mealIngr2:DataTypes.STRING,
       mealIngr3:DataTypes.STRING,

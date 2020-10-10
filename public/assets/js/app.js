@@ -104,15 +104,13 @@ function saveRecipe() {
       mealid: response.meals[0].idMeal,
       mealname: response.meals[0].strMeal,
       mealcategory: response.meals[0].strCategory,
-      
+      mealVideo:response.meals[0].strYoutube,
+      mealInstr:response.meals[0].strInstructions
+
     };
-    var test = {
-      mealid: "1",
-      mealname: "test",
-      mealcategory: "browser"
-    };
+    console.log(response)
     console.log(userRecipies)
-   $.post("/api/favRecipie", test);
+   $.post("/api/favRecipie", userRecipies);
   // console.log(userRecipie)
 });
 };

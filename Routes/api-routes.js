@@ -40,7 +40,9 @@ function getRecipie () {
     db.favoriteMeal.create({
       mealid: req.body.mealid,
       mealname: req.body.mealname,
-      mealcategory: req.body.cmealcategory
+      mealcategory: req.body.mealcategory,
+      mealVideo: req.body.mealVideo,
+      mealInstr:req.body.mealInstr
     }).then(function(results) {
       res.json(results);
     });
