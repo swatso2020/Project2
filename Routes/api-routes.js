@@ -14,21 +14,13 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  
-//serves the home html page
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/html/home.html"));
-  });
+ //get everything saved in database 
+  app.get("/api/recipies", function(req, res) {
+    db.favoriteMeal.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });               
 
-//get from database
-function getRecipie () {
-  connection.query("select * from whatscookin_db.favoriteMeals", function(err, res) {
-    if (err) throw err;
-      console.log("Here are all the departments");
-                  console.table(res);                           
-  })    
- 
-  }
 
                                           
 // POST route for saving a new todo. We can create a todo using the data on req.body
@@ -45,26 +37,4 @@ function getRecipie () {
       res.json(results);
     });
   });
-
-  // // DELETE route for deleting todos. We can access the ID of the todo to delete in
-  // // req.params.id
-  // app.delete("/api/todos/:id", function(req, res) {
-  //   console.log("Todo ID:");
-  //   console.log(req)
-  //   console.log(req.params.id);
-  //   db.toDoList.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function() {
-  //     res.end();
-  //   });
-  // });
-
-  // // PUT route for updating todos. We can access the updated todo in req.body
-  // app.put("/api/todos", function(req, res) {
-  //   db.toDoList.editTodo(req.body, function(results) {
-  //     res.json(results);
-  //   });
-  // });
-}
+};
