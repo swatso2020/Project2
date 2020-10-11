@@ -147,3 +147,27 @@ function randomRecipe() {
     }
   });
 }
+
+saveRecipe()
+//function to save a recipie in the database. 
+function saveRecipe() {
+  //   //api from meal database that returns a random meal with
+    let ajaxCall = `https://cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1/random.php`
+    $.ajax({
+      type: 'GET',
+      url: ajaxCall,
+    })
+    .then(function(response) {
+      var userRecipies = {
+        mealid: response.meals[0].idMeal,
+        mealname: response.meals[0].strMeal,
+        mealcategory: response.meals[0].strCategory
+      };
+      console.log(userRecipies)
+     $.post('/api/favRecipie', userRecipies);
+    // console.log(userRecipie)
+  });
+  };
+
+
+
