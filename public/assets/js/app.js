@@ -70,6 +70,7 @@ function ajaxCallRecipe(mealID) {
           var foodImg = $("<img>")
             .attr("src", result.meals[0].strMealThumb).addClass("food-image");
           document.getElementById("recipeDetail").style.display = "block";
+          document.getElementById("review-button").style.display = "block";
           $("#image-div").append(foodImg);
 
           $("#recipeTitle").html(result.meals[0].strMeal);
@@ -123,9 +124,11 @@ function randomRecipe() {
       //console.log(result)
       $("#image-div").empty();
       $("#instructions").empty();
+      
       var foodImg = $("<img>")
         .attr("src", result.meals[0].strMealThumb).addClass("food-image");
       document.getElementById("recipeDetail").style.display = "block";
+      document.getElementById("review-button").style.display = "block";
       $("#image-div").append(foodImg);
 
       $("#recipeTitle").html(result.meals[0].strMeal);
@@ -177,3 +180,9 @@ function saveRecipe() {
 
 
 
+  $("#review").click(function (event) {
+    event.preventDefault();
+    document.getElementById("review-form").style.display = "block";
+    document.getElementById("review").style.display = "none";
+  });
+  
