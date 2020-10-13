@@ -89,8 +89,11 @@
                 <div class="card">
                     <div id="recipeTitle" class="card-header">
                         Recipe title
+                        
                     </div>
+                    <a id="nutrition" class="btn favorite btn-primary btn-lg" href="#" role="button">Add to Favorites</a>
                     <div class="card-body">
+                        
 
                         <div class="row">
 
@@ -98,7 +101,7 @@
                                 <div id="image-div"></div>
                             </div>
                             <div class="col-sm-6">
-                                <h5 id="ingredientsTitle" class="card-title">Ingredients List:</h5>
+                                <h5 id="ingredientsTitle" class="ingredient-card-title">Ingredients List:</h5>
                                 <p class="card-text-ingredients">
                                     <ul id="ingredientsList">
                                         <!-- <li>800g Potatoes</li>	
@@ -127,17 +130,25 @@
             </div>
 
             <br>
-
-            <p>Find nutrition information or leave reviews for your favorite recipes.</p>
+<div id="review-button" style="display:none;">
+            <p>Tried this recipe? Leave a review!</p>
             <p class="lead">
-                <a id="nutrition" class="btn btn-success btn-lg" href="#" role="button">Nutrition</a>
+                
                 <a id="review" class="btn btn-warning btn-lg" href="#" role="button">Review</a>
             </p>
-                <br><br>
-
-
         </div>
-    </div>
+            <div class="row" id="review-form" style="display:none;">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        
+            
+                        <textarea type="search" id="review-input" placeholder="Please leave your review"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button id="search" type="submit" class="btn btn-success btn-lg">Submit</button>
+                </div>
+                <br><br>
+        </div>
+  
 
     <div class="container">
 
