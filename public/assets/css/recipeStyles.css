@@ -1,0 +1,24 @@
+.jumbotron {
+    /* background-image: url("https://images.unsplash.com/photo-1470549813517-2fa741d25c92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"); */
+    background-image: url("https://images.unsplash.com/photo-1563865436874-9aef32095fad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: 100%;
+    color: white;
+    font-weight: bold;
+
+}
+
+.card-header {
+    background-color: #0275d8;
+}
+
+.card-body {
+    color: black;
+}
+  
+.food-image {
+    width: 60%;
+    height: auto;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    border-radius: 3%;
+}
