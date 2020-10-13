@@ -113,11 +113,11 @@ function ajaxCallRecipe(mealID) {
     }
   })
 }
-function renderIngredients(ingredients){
+function renderIngredients(ingredients) {
 
-    $("#ingredientsList").empty();
+  $("#ingredientsList").empty();
 
-    for(let i = 0; i<ingredients.length; i++){
+  for (let i = 0; i < ingredients.length; i++) {
     // console.log(ingredients);
     let ingredientItem = $("<li>");
     let itemText = ingredients[i].measure + " " + ingredients[i].name;
@@ -189,10 +189,10 @@ function saveRecipe() {
       };
       console.log(response)
       console.log(userRecipies)
-     $.post('/api/favRecipie', userRecipies);
-    // console.log(userRecipie)
-  });
-  };
+      $.post('/api/favRecipie', userRecipies);
+      // console.log(userRecipie)
+    });
+};
 
 
 
