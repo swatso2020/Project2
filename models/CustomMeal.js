@@ -3,9 +3,6 @@ module.exports = function(sequelize, DataTypes) {
     var CustomMeal= sequelize.define("CustomMeal", {
         mealid:DataTypes.INTEGER,
         mealname: DataTypes.STRING,
-        mealcategory:DataTypes.STRING,
-        mealthumb: DataTypes.BOOLEAN,
-        mealVideo: DataTypes.STRING,
         mealIngr1:DataTypes.STRING,
         mealIngr2:DataTypes.STRING,
         mealIngr3:DataTypes.STRING,
@@ -27,5 +24,13 @@ module.exports = function(sequelize, DataTypes) {
         mealIngr19:DataTypes.STRING,
         mealIngr20:DataTypes.STRING,
       });
+      CustomMeal.associate = function(models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        CustomMeal.hasOne(models.favoriteMeal, {
+          onDelete: "cascade"
+        });
+      };
+    
       return CustomMeal;
     };
