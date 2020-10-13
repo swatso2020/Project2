@@ -21,22 +21,21 @@
 }
 
 .ingredient-card-title {
-    margin-top: -35px;
+    margin-top: -15px;
 }
   
 .food-image {
     width: 70%;
     height: auto;
-    margin-top: -35px;
+   
     margin-bottom: 15px;
     border-radius: 3%;
 }
 
 .favorite {
-    height: 40px;
-    width: 143px;
-    margin-left: 85%;
-    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-top: -10px;
     font-size: 15px;
+    font-weight: bold;
     background-color:  #0275d8;
 }
