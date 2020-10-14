@@ -1,9 +1,9 @@
 --creating whatscookin database--
-DROP DATABASE IF EXISTS whatsCookin_db;
-CREATE DATABASE whatsCookin_db;
+DROP DATABASE IF EXISTS whatscookin_db;
+CREATE DATABASE whatscookin_db;
 
 
-         --Database Queries--
+--Database Queries--
 -- see everything in the favorite meals table
 select *
 from whatscookin_db.FavoriteMeals

@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "whatsCookin_db",
-    "host": 3307,
+    "database": "whatscookin_db",
+    "host": 3306,
     "dialect": "mysql"
   },
   "test": {
