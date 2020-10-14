@@ -104,15 +104,17 @@
                 </div>
             </div>
             <br>
-<div id="review-button" style="display:none;">
-            <p id="review-title">Tried this recipe? Leave a review!</p>
+<div id="review-button">
             <p class="lead">
-                <a id="review" class="btn btn-warning btn-lg" href="#" role="button">Review</a>
+                <a style="display:none;" id="review" class="btn btn-primary btn-lg" href="#" role="button">Leave A Review</a>
+                <a id="faves" class="btn btn-primary btn-lg" href="#" role="button">View My Favorites</a>
+                <a id="add" class="btn btn-primary btn-lg" href="/assets/html/recipe.html" role="button">Add A Recipe</a>
             </p>
+            
         </div>
             <div class="row" id="review-form" style="display:none;">
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div id="review-div" class="form-group">
                         <textarea type="search" class="form-control" id="review-input" placeholder="Please leave your review"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <button id="submit-btn" type="submit" class="btn btn-success btn-lg">Submit</button>

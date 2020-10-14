@@ -67,7 +67,7 @@ function ajaxCallRecipe(mealid) {
       var foodImg = $("<img>")
         .attr("src", result.meals[0].strMealThumb).addClass("food-image");
       document.getElementById("recipeDetail").style.display = "block";
-      document.getElementById("review-button").style.display = "block";
+      document.getElementById("review").style.display = "inline";
       $("#image-div").append(foodImg);
       $("#recipeTitle").html(result.meals[0].strMeal);
       $("#instructions").html(result.meals[0].strInstructions);
@@ -138,6 +138,8 @@ function randomRecipe(mealid) {
       $("#image-div").empty();
       $("#instructions").empty();
       $("#recipeList").empty();
+      // $("#review-button").show();
+      // $("#review-div").hide();
 
       //  //show the favorites button, so the user is able to save another favorite
        $('#addToFavorites').show()
@@ -147,7 +149,7 @@ function randomRecipe(mealid) {
       var foodImg = $("<img>")
         .attr("src", result.meals[0].strMealThumb).addClass("food-image");
         document.getElementById("recipeDetail").style.display = "block";
-        document.getElementById("review-button").style.display = "block";
+        document.getElementById("review").style.display = "inline";
       $("#image-div").append(foodImg);
 
       $("#recipeTitle").html(result.meals[0].strMeal);
@@ -228,6 +230,7 @@ function saveRecipe() {
     event.preventDefault();
     document.getElementById("review-form").style.display = "block";
     document.getElementById("review").style.display = "none";
+    document.getElementById("faves").style.display= "none";
    
   });
   
@@ -241,7 +244,6 @@ function saveRecipe() {
 
     
     let reviewText = $("#review-input").val();
-    $("#review-title").html("Reviews:")
     $("#user-review").html(reviewText);
 
     
