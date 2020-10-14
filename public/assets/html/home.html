@@ -1,26 +1,18 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
     <link rel="stylesheet" href="/assets/css/styles.css">
-
     <title>Home</title>
-
 </head>
-
 <body>
-
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-light"></nav>
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-1"></div>
@@ -38,37 +30,29 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">What's Cookin'?</h1>
             <p class="lead">Kitchen inspiration... Search by ingredients to find the perfect recipe.</p>
-
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        
                         <label for="searchIngredients">SEARCH</label>
                         <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken Breast" value="chicken">
                     </div>
                     <button id="search" type="submit" class="btn btn-primary btn-lg">Search</button>
                 </div>
-
                 <div class="col-md-6 text-right">
                     <p>Need inspiration? Pull up a random recipe.</p>
                     <br><br>
-                    <a class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
+                    <a id="random-btn" class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
                 </div>
             </div>
-
             <br><br>
-
             <div id="searchResults">
                 <ul id="recipeList" class="list-group"></ul>
             </div>
-
             <br><br>
-
             <!-- <div id="recipeDetail" style="display: none;">
                 <div class="card">
                     <div id="recipeTitle" class="card-header">
@@ -80,22 +64,19 @@
                         <p id="ingredientsList" class="card-text-ingredients">... Ingredients Placeholder...</p>
                         <h5 id="instructionsTitle" class="card-title">Instructions:</h5>
                         <p id="instructions" class="card-text">Step-by-step instructions</p>
-
                     </div>
                 </div>
             </div> -->
-
             <div id="recipeDetail" style="display: none;">
                 <div class="card">
                     <div id="recipeTitle" class="card-header">
                         Recipe title
-                       
                     </div>
                     <button id="addToFavorites" class="btn favorite btn-primary btn-lg" data-meal="" role="button" onclick="saveRecipe()">Add to Favorites</button>
                     <div class="card-body">
-                        <a id="nutrition" class="btn favorite btn-primary btn-lg" href="#" role="button">Add to Favorites</a>
+                        <button id="addToFavorites" class="btn favorite btn-primary btn-lg" data-meal="" role="button" onclick="saveRecipe()">Add to Favorites</button>
+                        <!-- <a id="nutrition" class="btn favorite btn-primary btn-lg" href="#" role="button">Add to Favorites</a> -->
                         <div class="row">
-
                             <div class="col-sm-6">
                                 <div id="image-div"></div>
                             </div>
@@ -103,56 +84,52 @@
                                 <h5 id="ingredientsTitle" class="ingredient-card-title">Ingredients List:</h5>
                                 <p class="card-text-ingredients">
                                     <ul id="ingredientsList">
-                                        <!-- <li>800g Potatoes</li>	
-                                        <li>3 Onions</li>	
-                                        <li>2 tblsp Olive Oil</li>	
-                                        <li>100ml Chicken Stock</li>	
+                                        <!-- <li>800g Potatoes</li> 
+                                        <li>3 Onions</li>   
+                                        <li>2 tblsp Olive Oil</li>  
+                                        <li>100ml Chicken Stock</li>    
                                         <li>1 pot Creme Fraiche</li>
-                                        <li>Topping Parmesan</li>	
-                                        <li>4 Chicken Breasts</li>	
-                                        <li>4 Bacon</li>	
-                                        <li>Topping Spinach</li>	
+                                        <li>Topping Parmesan</li>   
+                                        <li>4 Chicken Breasts</li>  
+                                        <li>4 Bacon</li>    
+                                        <li>Topping Spinach</li>    
                                         <li>Topping Peas</li>
                                     </ul> -->
-                                    
                                 </p>
                             </div>
-
-
                         </div>
-
                         <h5 id="instructionsTitle" class="card-title">Instructions:</h5>
                         <p id="instructions" class="card-text">Step-by-step instructions</p>  
-
                     </div>
                 </div>
             </div>
-
             <br>
 <div id="review-button" style="display:none;">
-            <p>Tried this recipe? Leave a review!</p>
+            <p id="review-title">Tried this recipe? Leave a review!</p>
             <p class="lead">
-                
                 <a id="review" class="btn btn-warning btn-lg" href="#" role="button">Review</a>
             </p>
         </div>
             <div class="row" id="review-form" style="display:none;">
                 <div class="col-md-6">
                     <div class="form-group">
-                        
-            
                         <textarea type="search" class="form-control" id="review-input" placeholder="Please leave your review"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <button id="search" type="submit" class="btn btn-success btn-lg">Submit</button>
+                    <button id="submit-btn" type="submit" class="btn btn-success btn-lg">Submit</button>
                 </div>
-                <br><br>
+              
+               
+                <div class="col-md-6">
+                <div id="review-text" class="review-card card" style="display: none;">
+                    <div class="card-body">
+                       <p id="user-review"></p>
+        
+                </div>
+            </div>
         </div>
-  
-
+       
     <div class="container">
-
         <div class="row">
-
             <div class="col-sm-1"></div>
             <div class="col-sm-1"></div>
             <div class="col-sm-1"></div>
@@ -165,17 +142,8 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-1"></div>
             <div class="col-sm-1"></div>
-
         </div>
-
-
-
     </div>
-
-   
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -188,10 +156,8 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!--<script src="/assets/js/app.js"></script>-->
     <script src="/assets/js/app.js"></script>
    
 </body>
-
 </html>

@@ -1,8 +1,6 @@
 require("dotenv").config();
 var express = require("express");
-const session = require("express-session");
-// Requiring passport as we've configured it
-const passport = require("./config/passport");
+
 
 // Sets up the Express App
 // =============================================================
@@ -10,6 +8,8 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 const cors = require('cors');
+const session = require("express-session");
+const passport = require("./config/passport");
 
 
 // const allowedOrigins = [
