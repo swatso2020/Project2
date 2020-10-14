@@ -8,6 +8,8 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 const cors = require('cors');
+const session = require("express-session");
+const passport = require("./config/passport");
 
 
 // const allowedOrigins = [
