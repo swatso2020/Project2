@@ -52,6 +52,10 @@
             <div id="searchResults">
                 <ul id="recipeList" class="list-group"></ul>
             </div>
+
+            <div id="favorite-results" style="display: none;">
+                <ul id="favoriteList" class="list-group"><li class="list-group-item list-group-item-action">favorite1</li><li class="list-group-item list-group-item-action">favorite2</li></ul>
+            </div>
             <br><br>
             <!-- <div id="recipeDetail" style="display: none;">
                 <div class="card">
@@ -72,7 +76,7 @@
                     <div id="recipeTitle" class="card-header">
                         Recipe title
                     </div>
-                    <button id="addToFavorites" class="btn favorite btn-primary btn-lg" data-meal="" role="button" onclick="saveRecipe()">Add to Favorites</button>
+
                     <div class="card-body">
                         <button id="addToFavorites" class="btn favorite btn-primary btn-lg" data-meal="" role="button" onclick="saveRecipe()">Add to Favorites</button>
                         <!-- <a id="nutrition" class="btn favorite btn-primary btn-lg" href="#" role="button">Add to Favorites</a> -->
