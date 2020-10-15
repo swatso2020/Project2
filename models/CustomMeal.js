@@ -23,14 +23,28 @@ module.exports = function(sequelize, DataTypes) {
         mealIngr18:DataTypes.STRING,
         mealIngr19:DataTypes.STRING,
         mealIngr20:DataTypes.STRING,
-      });
-      CustomMeal.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        CustomMeal.hasOne(models.favoriteMeal, {
-          onDelete: "cascade"
-        });
-      };
+        measure1:DataTypes.STRING,
+        measure2:DataTypes.STRING,
+        measure3:DataTypes.STRING,
+        measure4:DataTypes.STRING,
+        measure5:DataTypes.STRING,
+        measure6:DataTypes.STRING,
+        measure7:DataTypes.STRING,
+        measure8:DataTypes.STRING,
+        measure9:DataTypes.STRING,
+        measure10:DataTypes.STRING,
+        measure11:DataTypes.STRING,
+        measure12:DataTypes.STRING,
+        measure13:DataTypes.STRING,
+        measure14:DataTypes.STRING,
+        measure15:DataTypes.STRING,
+        measure16:DataTypes.STRING,
+        measure17:DataTypes.STRING,
+        measure18:DataTypes.STRING,
+        measure19:DataTypes.STRING,
+        measure20:DataTypes.STRING,
+    });
+    
     
       return CustomMeal;
     };
