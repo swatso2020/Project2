@@ -61,11 +61,14 @@ if(document.querySelectorAll("input#inlineFormIngredient")[20]){
 
 $("#dishSubmitted").click(function (e) {
   e.preventDefault();
-
+ 
 for(i=0; i < 20; i++){
   if(document.querySelectorAll("input#inlineFormAmount")[i].value || 
   document.querySelectorAll("input#inlineFormIngredient")[i].value){
+    alert("Thank you! Your dish has been submitted.");
+    window.location.replace("/home");
   }else{
+    alert("Please fill in any empty forms.")
     break;
   }
   console.log(number1, number2)
