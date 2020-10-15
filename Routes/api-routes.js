@@ -9,7 +9,7 @@ var db = require("../models");
 
 const passport = require("../config/passport");
 
-
+const chalk = require('chalk');
 
 // Routes
 // =============================================================
@@ -82,7 +82,7 @@ module.exports = function(app) {
                                           
 // Post route for saving new recipie.
   app.post("/api/favRecipie", function(req, res) {
-    console.log("New Recipie:");
+    console.log(chalk.bgBlue.yellow("New Recipie added to favorites:" ));
     console.log(req.body);
     db.favoriteMeal.create({
       mealid: req.body.mealid,
@@ -119,7 +119,7 @@ module.exports = function(app) {
   
   //Select based on user value 
   app.post("/api/insertRecipie", function(req, res) {
-    console.log("Here is you New Recipie:");
+    console.log(chalk.bgGreen.yellow("Here is your New Recipie:"));
     console.log(req.body);
     db.CustomMeal.create({
       mealname: req.body.mealname,
