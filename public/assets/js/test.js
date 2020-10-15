@@ -230,7 +230,7 @@ $("#search").click(function (event) {
 
 
 
-
+saveRecipe()
 //function to save a recipie in the database. based on the random generation
 function saveRecipe() {
   //api from meal database that returns a random meal to populate database. This wont be needed once save button is avaiable
@@ -262,6 +262,71 @@ function saveRecipe() {
   });
   };
 
+  function insertRecipe() {
+    //api from meal database that returns a random meal to populate database. This wont be needed once save button is avaiable
+      let ajaxCall = `https://cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1/random.php`
+      $.ajax({
+        type: 'GET',
+        url: ajaxCall,
+      })
+      .then(function(response) {
+  
+        var insertRecipies = {
+          
+          mealname: response.meals[0].strMeal,
+          mealInstr: response.meals[0].strInstructions,
+          mealcategory: response.meals[0].strCategory,
+          mealIngr1: response.meals[0].strIngredient1,
+          mealIngr2: response.meals[0].strIngredient2,
+          mealIngr3: response.meals[0].strIngredient3,
+          mealIngr4: response.meals[0].strIngredient4,
+          mealIngr5: response.meals[0].strIngredient5,
+          mealIngr6: response.meals[0].strIngredient6,
+          mealIngr7: response.meals[0].strIngredient7,
+          mealIngr8: response.meals[0].strIngredient8,
+          mealIngr9: response.meals[0].strIngredient9,
+          mealIngr10: response.meals[0].strIngredient10,
+          mealIngr11: response.meals[0].strIngredient11,
+          mealIngr12: response.meals[0].strIngredient12,
+          mealIngr13: response.meals[0].strIngredient13,
+          mealIngr14: response.meals[0].strIngredient14,
+          mealIngr15: response.meals[0].strIngredient15,
+          mealIngr16: response.meals[0].strIngredient16,
+          mealIngr17: response.meals[0].strIngredient17,
+          mealIngr18: response.meals[0].strIngredient18,
+          mealIngr19: response.meals[0].strIngredient19,
+          mealIngr20: response.meals[0].strIngredient20,
+          measure1: response.meals[0].strMeasure1,
+          measure2: response.meals[0].strMeasure2,
+          measure3: response.meals[0].strMeasure3,
+          measure4: response.meals[0].strMeasure4,
+          measure5: response.meals[0].strMeasure5,
+          measure6: response.meals[0].strMeasure6,
+          measure7: response.meals[0].strMeasure7,
+          measure8: response.meals[0].strMeasure9,
+          measure10: response.meals[0].strMeasure10,
+          measure11: response.meals[0].strMeasure11,
+          measure12: response.meals[0].strMeasure12,
+          measure13: response.meals[0].strMeasure13,
+          measure14: response.meals[0].strMeasure14,
+          measure15: response.meals[0].strMeasure15,
+          measure16: response.meals[0].strMeasure16,
+          measure17: response.meals[0].strMeasure17,
+          measure18: response.meals[0].strMeasure18,
+          measure19: response.meals[0].strMeasure19,
+          measure20: response.meals[0].strMeasure20,
+        };
+       
+       $.post('/api/insertRecipie', insertRecipies);
+    });
+    };
+
+
+
+
+
+
+
 // saveRecipe2(results)
 // //function to save a recipie in the database. based on the random generation
 // function saveRecipe2(mealID) {
@@ -285,18 +350,20 @@ function saveRecipe() {
 
 
 
-//test send user input
-// getFavorites()
-//   function getFavorites() {
-//     //api
-//       let ajaxCall = ``
-//       $.ajax({
-//         type: 'GET',
-//         url: ajaxCall,
-//       })
-//       .then(function(response) {
-//       })
-// console.log(response)
-//     };
+// test send user input
+getFavorites()
+  function getFavorites() {
+    //api
+      let ajaxCall = `/api/recipies`
+      $.ajax({
+        type: 'GET',
+        url: ajaxCall,
+      })
+      .then(function(response) {
+        console.log(response)
+
+      })
+
+    };
 
 

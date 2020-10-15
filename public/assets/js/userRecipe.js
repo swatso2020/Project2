@@ -65,9 +65,12 @@ let usersIngredients = {};
 // let ingredientAndAmount;
 $("#dishSubmitted").click(function (e) {
   e.preventDefault();
+
   for (i = 0; i < 20; i++) {
     if (document.querySelectorAll("#inlineFormAmount")[i] ||
       document.querySelectorAll("#inlineFormIngredient")[i]) {
+      alert("Thank you! Your dish has been submitted.");
+    window.location.replace("/home");
       usersIngredients["mealAmount" + i] = document.querySelectorAll("#inlineFormAmount")[i].value;
       usersIngredients["mealIngredient" + i] = document.querySelectorAll("#inlineFormIngredient")[i].value;
 
@@ -75,7 +78,7 @@ $("#dishSubmitted").click(function (e) {
 
 
     } else {
-
+alert("Please fill in any empty forms.")
       break;
     }
 

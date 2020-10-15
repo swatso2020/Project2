@@ -44,3 +44,7 @@
     font-weight: bold;
     background-color:  #0275d8;
 }
+
+#addIngredient {
+    margin-left: -18px;
+}

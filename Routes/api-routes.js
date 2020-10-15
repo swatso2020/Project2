@@ -40,6 +40,7 @@ module.exports = function(app) {
       .catch(err => {
         res.status(401).json(err);
       });
+      //res.json(response);
   });
 
   // Route for logging user out
@@ -70,12 +71,12 @@ module.exports = function(app) {
       res.json(results);
     });
   });
-  //get favorite meals and recipies
-  app.get("/api/recipies", function(req, res) {
-    db.favoriteMeal.findAll({}).then(function(results) {
-      res.json(results);
-    });
-  });
+  // //get favorite meals and recipies
+  // app.get("/api/recipies", function(req, res) {
+  //   db.favoriteMeal.findAll({}).then(function(results) {
+  //     res.json(results);
+  //   });
+  // });
 
 
                                           
@@ -88,11 +89,6 @@ module.exports = function(app) {
       mealname: req.body.mealname,
       mealcategory: req.body.mealcategory,
       mealVideo: req.body.mealVideo,
-      //mealRev:req.body
-    })
-
-    db.CustomMeal.create({
-      mealid: req.body.mealid,
       mealInstr:req.body.mealInstr,
       mealIngr1:req.body.mealIngr1,
       mealIngr2:req.body.mealIngr2,
@@ -112,8 +108,8 @@ module.exports = function(app) {
       mealIngr16:req.body.mealIngr16,
       mealIngr17:req.body.mealIngr17,
       mealIngr18:req.body.mealIngr18,
-      mealIngr19:req.body.strIngredient19,
-      mealIngr19:req.body.strIngredient20
+      mealIngr19:req.body.mealIngr19,
+      mealIngr19:req.body.mealIngr20
     }).then(function(results) {
       res.json(results);
     });
@@ -122,11 +118,54 @@ module.exports = function(app) {
 
   
   //Select based on user value 
-  app.get("/api/getfavorites", function(req, res) {
-    console.log(req.body)
-    db.favoriteMeal.findAll({}).then(function(results) {
-      res.json(results);
-    });
+  app.post("/api/insertRecipie", function(req, res) {
+    console.log("Here is you New Recipie:");
+    console.log(req.body);
+    db.CustomMeal.create({
+      mealname: req.body.mealname,
+      mealcategory: req.body.mealcategory,
+      mealInstr:req.body.mealInstr,
+      mealIngr1:req.body.mealIngr1,
+      mealIngr2:req.body.mealIngr2,
+      mealIngr3:req.body.mealIngr3,
+      mealIngr4:req.body.mealIngr4,
+      mealIngr5:req.body.mealIngr5,
+      mealIngr6:req.body.mealIngr6,
+      mealIngr7:req.body.mealIngr7,
+      mealIngr8:req.body.mealIngr8,
+      mealIngr9:req.body.mealIngr9,
+      mealIngr10:req.body.mealIngr10,
+      mealIngr11:req.body.mealIngr11,
+      mealIngr12:req.body.mealIngr12,
+      mealIngr13:req.body.mealIngr13,
+      mealIngr14:req.body.mealIngr14,
+      mealIngr15:req.body.mealIngr15,
+      mealIngr16:req.body.mealIngr16,
+      mealIngr17:req.body.mealIngr17,
+      mealIngr18:req.body.mealIngr18,
+      mealIngr19:req.body.mealIngr19,
+      mealIngr19:req.body.mealIngr20,
+      measure1:req.body.measure1,
+      measure2:req.body.measure2,
+      measure3:req.body.measure3,
+      measure4:req.body.measure4,
+      measure5:req.body.measure5,
+      measure6:req.body.measure6,
+      measure7:req.body.measure7,
+      measure8:req.body.measure8,
+      measure9:req.body.measure9,
+      measure10:req.body.measure10,
+      measure11:req.body.measure11,
+      measure12:req.body.measure12,
+      measure13:req.body.measure13,
+      measure14:req.body.measure14,
+      measure15:req.body.measure15,
+      measure16:req.body.measure16,
+      measure17:req.body.measure17,
+      measure18:req.body.measure18,
+      measure19:req.body.measure19,
+      measure20:req.body.measure20,
+    })
   }); 
   
   
