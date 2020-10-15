@@ -3,6 +3,13 @@ console.log('works')
 $("#search").click(function (event) {
   event.preventDefault();
   let userInput = $("#search-input").val();
+  document.getElementById("recipeList").style.display="block";
+  document.getElementById("favorite-results").style.display="none";
+  document.getElementById("review-text").style.display="none";
+    document.getElementById("faves").style.display="inline";
+    document.getElementById("add").style.display="inline";
+     document.getElementById("add").style.display="inline";
+ 
   ajaxCallSearch(userInput);
 });
 
@@ -49,9 +56,9 @@ function ajaxCallSearch(userInput) {
   });
 }
 
-function ajaxCallRecipe(mealID) {
+function ajaxCallRecipe(mealid) {
  
-  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
+  let ajaxCall = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealid}`
   $.ajax({
 
     url: ajaxCall, success: function (result) {
@@ -63,11 +70,23 @@ function ajaxCallRecipe(mealID) {
       //show the favorites button, so the user is able to save another favorite
       $('#addToFavorites').show()
       //attribute to store meal id
-      $('#addToFavorites').attr("meal",mealID)
+      $('#addToFavorites').attr("meal",mealid)
       var foodImg = $("<img>")
         .attr("src", result.meals[0].strMealThumb).addClass("food-image");
       document.getElementById("recipeDetail").style.display = "block";
-      document.getElementById("review-button").style.display = "block";
+      document.getElementById("review").style.display = "inline";
+
+
+      //hiding and showing review, favorites and add recipe data
+   
+      document.getElementById("submit-btn").style.display = "none";
+      document.getElementById("faves").style.display = "inline";
+      document.getElementById("add").style.display = "inline";
+      document.getElementById("review-text").style.display="none";
+      
+      
+
+
       $("#image-div").append(foodImg);
       $("#recipeTitle").html(result.meals[0].strMeal);
       $("#instructions").html(result.meals[0].strInstructions);
@@ -127,7 +146,7 @@ function renderIngredients(ingredients) {
   }
 }
 
-function randomRecipe() {
+function randomRecipe(mealid) {
   let ajaxCall = `https://www.themealdb.com/api/json/v1/1/random.php`
   $.ajax({
 
@@ -137,16 +156,33 @@ function randomRecipe() {
       //console.log(result)
       $("#image-div").empty();
       $("#instructions").empty();
+      $("#recipeList").empty();
+      // $("#review-button").show();
+      // $("#review-div").hide();
+
+      //  //show the favorites button, so the user is able to save another favorite
+       $('#addToFavorites').show()
+      //  //attribute to store meal id
+       $('#addToFavorites').attr("meal",mealid)
       
       var foodImg = $("<img>")
         .attr("src", result.meals[0].strMealThumb).addClass("food-image");
-      document.getElementById("recipeDetail").style.display = "block";
-      document.getElementById("review-button").style.display = "block";
+        document.getElementById("recipeDetail").style.display = "block";
+        document.getElementById("review").style.display = "inline";
       $("#image-div").append(foodImg);
 
       $("#recipeTitle").html(result.meals[0].strMeal);
 
       $("#instructions").html(result.meals[0].strInstructions);
+
+        //hiding and showing review, favorites and add recipe data
+   
+        document.getElementById("submit-btn").style.display = "none";
+        document.getElementById("faves").style.display = "inline";
+        document.getElementById("add").style.display = "inline";
+        document.getElementById("review-text").style.display="none";
+      
+    
 
       const ingredients = [];
       for (let i = 1; i <= 20; i++) {
@@ -162,7 +198,29 @@ function randomRecipe() {
           })
         }
       }
+      var userRecipies = {
+        mealid: result.meals[0].idMeal,
+        mealname: result.meals[0].strMeal,
+        mealInstr: result.meals[0].strInstructions,
+        mealcategory: result.meals[0].strCategory,
+        mealIngr1: result.meals[0].strIngredient1,
+        mealIngr2: result.meals[0].strIngredient2,
+        mealIngr3: result.meals[0].strIngredient3,
+        mealIngr4: result.meals[0].strIngredient4,
+        mealIngr5: result.meals[0].strIngredient5,
+        mealIngr6: result.meals[0].strIngredient6,
+        mealIngr7: result.meals[0].strIngredient7,
+        mealIngr8: result.meals[0].strIngredient8,
+        mealIngr9: result.meals[0].strIngredient9,
+        mealIngr10: result.meals[0].strIngredient10
+      };
+      //when add favorites is clicked userRecipies is sent to db and favorites button is hidden because user can just keep clicking
+      $('#addToFavorites').click(function(){
+        console.log(userRecipies)
+        $("#addToFavorites").hide();
+       $.post('/api/favRecipie', userRecipies);
 
+      });
       renderIngredients(ingredients);
 
     }
@@ -174,10 +232,10 @@ function randomRecipe() {
 //function to save a recipie in the database. 
 function saveRecipe() {
   //api from meal database that returns a random meal to populate database. This wont be needed once save button is avaiable
-    let ajaxCall = `https://cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1/random.php`
+    // let ajaxCall = `https://cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1/random.php`
     $.ajax({
       type: 'GET',
-      url: ajaxCall,
+      // url: ajaxCall,
     })
     .then(function(response) {
      
@@ -198,7 +256,39 @@ function saveRecipe() {
 
   $("#review").click(function (event) {
     event.preventDefault();
+    document.getElementById("submit-btn").style.display = "inline";
+    document.getElementById("review-input").style.display="inline";
     document.getElementById("review-form").style.display = "block";
     document.getElementById("review").style.display = "none";
+    document.getElementById("faves").style.display= "none";
+    document.getElementById("add").style.display= "none";
+  
+  
+   
   });
   
+  $("#submit-btn").click(function (event){
+    event.preventDefault();
+    document.getElementById("review-text").style.display = "block";
+    document.getElementById("submit-btn").style.display = "none";
+    document.getElementById("review").style.display = "none";
+    document.getElementById("review-input").style.display = "none";
+  
+
+    
+    let reviewText = $("#review-input").val();
+    $("#user-review").html(reviewText);
+
+    
+
+  })
+
+  $("#faves").click(function(event){
+    event.preventDefault();
+    
+    document.getElementById("favorite-results").style.display="inline";
+    document.getElementById("recipeList").style.display="none";
+    document.getElementById("recipeDetail").style.display="none";
+    document.getElementById("review").style.display="none";
+    document.getElementById("faves").style.display="none";
+  })
