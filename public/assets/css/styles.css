@@ -6,6 +6,8 @@
 form.signup,
 form.login {
   margin-top: 50px;
+  padding: 25px;
+
 }
 
 body {
@@ -62,6 +64,7 @@ h2 {
     /* background-image: url("https://images.unsplash.com/photo-1470549813517-2fa741d25c92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"); */
     background-image: url("https://images.unsplash.com/photo-1563865436874-9aef32095fad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
     background-size: 100%;
+    margin-top: 50px;
     color: white;
     font-weight: bold;
 }
