@@ -66,33 +66,32 @@ let usersIngredients = {};
 $("#dishSubmitted").click(function (e) {
   e.preventDefault();
 
-  for (i = 0; i < 20; i++) {
+  for (i = 0; i < 21; i++) {
     if (document.querySelectorAll("#inlineFormAmount")[i] ||
       document.querySelectorAll("#inlineFormIngredient")[i]) {
-      alert("Thank you! Your dish has been submitted.");
-    window.location.replace("/home");
-      usersIngredients["mealAmount" + i] = document.querySelectorAll("#inlineFormAmount")[i].value;
-      usersIngredients["mealIngredient" + i] = document.querySelectorAll("#inlineFormIngredient")[i].value;
+      //alert("Thank you! Your dish has been submitted.");
+    //window.location.replace("/home");
+      usersIngredients["measure" + i] = document.querySelectorAll("#inlineFormAmount")[i].value;
+      usersIngredients["mealIngr" + i] = document.querySelectorAll("#inlineFormIngredient")[i].value;
 
      
 
 
     } else {
-alert("Please fill in any empty forms.")
+//alert("Please fill in any empty forms.")
       break;
     }
 
   }
-  let userCategory = $('#inputGroupSelect01').find(":selected").text()
-  let recipeName = $('#strMeal').val();
-  let userInstructions = $('#strInstructions').val();
+  let mealCategory = $('#inputGroupSelect01').find(":selected").text()
+  let mealName = $('#strMeal').val();
+  let mealInstr = $('#strInstructions').val();
 
   let usersMeal = {
-    recipeName,
-    ...usersIngredients,
-    userInstructions,
-    userCategory
-
+    mealName,
+    mealCategory,
+    mealInstr,
+    ...usersIngredients
   }
   console.log(usersMeal)
 

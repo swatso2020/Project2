@@ -21,7 +21,6 @@
             <a href="/logout" class="btn btn-dark shadow">Logout</a>
         </div>
     </nav>
-
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">What's Cookin'?</h1>
@@ -41,26 +40,26 @@
                         onclick="randomRecipe()">Random</a>
                 </div>
             </div>
-
             <br><br>
             <div id="searchResults">
                 <ul id="recipeList" class="list-group"></ul>
             </div>
-
             <div id="favorite-results" style="display: none;">
                 <ul id="favoriteList" class="list-group">
-                    <li class="list-group-item list-group-item-action">favorite1</li>
-                    <li class="list-group-item list-group-item-action">favorite2</li>
+                    <button class="btn btn-success btn-lg" id="fav1">
+                        <li class="list-group-item list-group-item-action" >favorite1</li>
+                    </button>
+                    <button class="btn btn-warning btn-lg" id="fav2">
+                        <li class="list-group-item list-group-item-action" >favorite2</li>
+                    </button>
                 </ul>
             </div>
             <br><br>
-
             <div id="recipeDetail" style="display: none;">
                 <div class="card">
                     <div id="recipeTitle" class="card-header">
                         Recipe title
                     </div>
-
                     <div class="card-body">
                         <button id="addToFavorites" class="btn btn-success btn-sm shadow" data-meal="" role="button"
                             onclick="saveRecipe()">Add to Favorites</button>
@@ -72,10 +71,8 @@
                             <div class="col-sm-6">
                                 <h5 id="ingredientsTitle" class="ingredient-card-title">Ingredients List:</h5>
                                 <p class="card-text-ingredients">
-
                                 <ul id="ingredientsList">
                                 </ul>
-
                                 </p>
                             </div>
                         </div>
@@ -85,7 +82,6 @@
                 </div>
             </div>
             <br>
-
             <div id="review-button">
                 <p class="lead">
                     <a style="display:none;" id="review" class="btn btn-primary btn-lg" href="#" role="button">Leave A
@@ -96,7 +92,6 @@
                         Recipe</a>
                 </p>
             </div>
-
             <div class="row" id="review-form" style="display:none;">
                 <div class="col-md-6">
                     <div id="review-div" class="form-group">
@@ -106,21 +101,16 @@
                     </div>
                     <button id="submit-btn" type="submit" class="btn btn-success btn-lg">Submit</button>
                 </div>
-
                 <div class="col-md-6">
                     <div id="review-text" class="review-card card" style="display: none;">
                         <div class="card-body">
                             <p id="user-review"></p>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -135,7 +125,6 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<script src="/assets/js/app.js"></script>-->
     <script src="/assets/js/app.js"></script>
-
 </body>
 
 </html>
