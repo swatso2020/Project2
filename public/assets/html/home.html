@@ -18,9 +18,7 @@
             <div class="navbar-header">
                 <h1>What's Cookin'</h1>
             </div>
-            <button class="logout-button" href="/logout">
-                Logout
-            </button>
+            <a href="/logout" class="btn btn-dark shadow">Logout</a>
         </div>
     </nav>
 
@@ -34,12 +32,12 @@
                         <label for="searchIngredients">SEARCH</label>
                         <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken Breast">
                     </div>
-                    <button id="search" type="submit" class="btn btn-primary btn-lg">Search</button>
+                    <button id="search" type="submit" class="btn btn-primary btn-lg shadow">Search</button>
                 </div>
                 <div class="col-md-6 text-right">
                     <p>Need inspiration? Pull up a random recipe.</p>
                     <br><br>
-                    <a id="random-btn" class="btn btn-info btn-lg" href="#" role="button"
+                    <a id="random-btn" class="btn btn-info btn-lg shadow" href="#" role="button"
                         onclick="randomRecipe()">Random</a>
                 </div>
             </div>
@@ -64,8 +62,9 @@
                     </div>
 
                     <div class="card-body">
-                        <button id="addToFavorites" class="btn favorite btn-primary btn-lg" data-meal="" role="button"
+                        <button id="addToFavorites" class="btn btn-success btn-sm shadow" data-meal="" role="button"
                             onclick="saveRecipe()">Add to Favorites</button>
+                        <br><br>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div id="image-div"></div>
@@ -91,8 +90,9 @@
                 <p class="lead">
                     <a style="display:none;" id="review" class="btn btn-primary btn-lg" href="#" role="button">Leave A
                         Review</a>
-                    <a id="faves" class="btn btn-primary btn-lg" href="#" role="button">View My Favorites</a>
-                    <a id="add" class="btn btn-primary btn-lg" href="/assets/html/recipe.html" role="button">Add A
+                    <a id="faves" class="btn btn-warning btn-lg shadow" href="#" role="button">View My Favorites</a>
+                    <a id="add" class="btn btn-success btn-lg shadow" href="/assets/html/recipe.html" role="button">Add
+                        A
                         Recipe</a>
                 </p>
             </div>
