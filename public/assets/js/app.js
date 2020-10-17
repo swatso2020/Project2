@@ -255,7 +255,8 @@ function saveRecipe() {
 
 
 $("#review").click(function (event) {
-  event.preventDefault();
+  // event.preventDefault();
+  $("#review-input").val("")
   document.getElementById("submit-btn").style.display = "inline";
   document.getElementById("review-input").style.display = "inline";
   document.getElementById("review-form").style.display = "block";
