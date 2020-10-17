@@ -32,19 +32,19 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/assets/html/members.html"));
   });
 
-
-
   //serves the home html page
   app.get("/home", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/home.html"));
   });
 
-
-  //This will server the recipie html
+  //This will serve the recipe html
   app.get("/recipe", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/html/recipie.html"));
+    res.sendFile(path.join(__dirname, "../public/assets/html/recipe.html"));
   });
 
-
+  //This will serve the contact html
+  app.get("/contact", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/html/contact.html"));
+  });
 }
 
