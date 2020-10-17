@@ -105,6 +105,7 @@ function ajaxCallRecipe(mealId) {
       }
 
       renderIngredients(ingredients);
+      
 
       //Object to store response from results. When the favorites button is clicked, this will be sent to db
       var userRecipies = {
@@ -112,6 +113,7 @@ function ajaxCallRecipe(mealId) {
         mealname: result.meals[0].strMeal,
         mealInstr: result.meals[0].strInstructions,
         mealcategory: result.meals[0].strCategory,
+        mealThumb: result.meals[0].strMealThumb,
         mealIngr1: result.meals[0].strIngredient1,
         mealIngr2: result.meals[0].strIngredient2,
         mealIngr3: result.meals[0].strIngredient3,
@@ -130,6 +132,7 @@ function ajaxCallRecipe(mealId) {
         $.post('/api/favRecipie', userRecipies);
 
       });
+      
     }
   })
 }
@@ -195,6 +198,7 @@ function randomRecipe(mealId) {
         mealid: result.meals[0].idMeal,
         mealname: result.meals[0].strMeal,
         mealInstr: result.meals[0].strInstructions,
+        mealThumb: result.meals[0].strMealThumb,
         mealcategory: result.meals[0].strCategory,
         mealIngr1: result.meals[0].strIngredient1,
         mealIngr2: result.meals[0].strIngredient2,
@@ -215,6 +219,7 @@ function randomRecipe(mealId) {
 
       // });
       renderIngredients(ingredients);
+      
 
     }
   });

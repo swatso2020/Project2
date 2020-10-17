@@ -89,28 +89,29 @@ module.exports = function (app) {
       mealname: req.body.mealname,
       mealcategory: req.body.mealcategory,
       mealVideo: req.body.mealVideo,
-      mealInstr: req.body.mealInstr,
-      mealIngr1: req.body.mealIngr1,
-      mealIngr2: req.body.mealIngr2,
-      mealIngr3: req.body.mealIngr3,
-      mealIngr4: req.body.mealIngr4,
-      mealIngr5: req.body.mealIngr5,
-      mealIngr6: req.body.mealIngr6,
-      mealIngr7: req.body.mealIngr7,
-      mealIngr8: req.body.mealIngr8,
-      mealIngr9: req.body.mealIngr9,
-      mealIngr10: req.body.mealIngr10,
-      mealIngr11: req.body.mealIngr11,
-      mealIngr12: req.body.mealIngr12,
-      mealIngr13: req.body.mealIngr13,
-      mealIngr14: req.body.mealIngr14,
-      mealIngr15: req.body.mealIngr15,
-      mealIngr16: req.body.mealIngr16,
-      mealIngr17: req.body.mealIngr17,
-      mealIngr18: req.body.mealIngr18,
-      mealIngr19: req.body.mealIngr19,
-      mealIngr19: req.body.mealIngr20
-    }).then(function (results) {
+      mealthumb:req.body.mealThumb,
+      mealInstr:req.body.mealInstr,
+      mealIngr1:req.body.mealIngr1,
+      mealIngr2:req.body.mealIngr2,
+      mealIngr3:req.body.mealIngr3,
+      mealIngr4:req.body.mealIngr4,
+      mealIngr5:req.body.mealIngr5,
+      mealIngr6:req.body.mealIngr6,
+      mealIngr7:req.body.mealIngr7,
+      mealIngr8:req.body.mealIngr8,
+      mealIngr9:req.body.mealIngr9,
+      mealIngr10:req.body.mealIngr10,
+      mealIngr11:req.body.mealIngr11,
+      mealIngr12:req.body.mealIngr12,
+      mealIngr13:req.body.mealIngr13,
+      mealIngr14:req.body.mealIngr14,
+      mealIngr15:req.body.mealIngr15,
+      mealIngr16:req.body.mealIngr16,
+      mealIngr17:req.body.mealIngr17,
+      mealIngr18:req.body.mealIngr18,
+      mealIngr19:req.body.mealIngr19,
+      mealIngr20:req.body.mealIngr20,
+    }).then(function(results) {
       res.json(results);
     });
   });
@@ -176,6 +177,17 @@ module.exports = function (app) {
       res.json(results);
     });
   });
+
+  // app.get("/api/test", function(req, res) {
+  //   console.log(req.body)
+  //   db.favoriteMeal.findAll({where:{mealIngr1 = "butter"}}).then(function(results) {
+  //     res.json(results);
+  //   });
+  // });
+
+  
+
+ 
 
 };
 

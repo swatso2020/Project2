@@ -28,8 +28,8 @@ function ajaxCallSearch(userInput) {
       for (let j = 0; j < 3; j++) {
 
 
-        console.log(result.meals[j].strMeal);
-        console.log(result.meals[j].idMeal);
+        // console.log(result.meals[j].strMeal);
+        // console.log(result.meals[j].idMeal);
         let randomNumber = [Math.floor(Math.random() * 11)]
         let mealTile = $("<a>");
         let mealName = result.meals[randomNumber].strMeal;
@@ -39,14 +39,15 @@ function ajaxCallSearch(userInput) {
         mealTile.addClass("list-group-item list-group-item-action");
         mealTile.html(mealName);
         mealTile.attr("onclick", "ajaxCallRecipe('" + mealID + "')");
-
         // https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
 
         $("#recipeList").append(mealTile);
-        console.log("this is the ajax call seacrh function")
-        console.log(mealName)
-
+        // console.log(mealtile)
+        // console.log(mealName)
+        // console.log(mealID)
+      
       }
+     
     }
   });
 }
@@ -244,6 +245,7 @@ function saveRecipe() {
       var userRecipies = {
         mealid: response.meals[0].idMeal,
         mealname: response.meals[0].strMeal,
+        mealThumb: response.meals[0].strMealThumb,
         mealInstr: response.meals[0].strInstructions,
         mealcategory: response.meals[0].strCategory,
         mealIngr1: response.meals[0].strIngredient1,
