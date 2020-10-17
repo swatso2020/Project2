@@ -298,35 +298,37 @@ function getFavorites() {
     .then(function (response) {
       console.log(response)
       // Designating 5 Random Favorite recipes a random number and showing them each with options if they are clicked on to display
-      let randomNumber1 = Math.floor(Math.random() * response.length)
+
+      //Math.floor(Math.random() * response.length)
+      let randomNumber1 = 0
       $("#fav1").text(response[randomNumber1].mealname);
       $("#fav1").click(function () {
         let favoriteChosen = response[randomNumber1]
         displayer(favoriteChosen)
       })
 
-      let randomNumber2 = Math.floor(Math.random() * response.length)
+      let randomNumber2 = 1
       $("#fav2").text(response[randomNumber2].mealname);
       $("#fav2").click(function () {
         let favoriteChosen = response[randomNumber2]
         displayer(favoriteChosen)
       })
 
-      let randomNumber3 = Math.floor(Math.random() * response.length)
+      let randomNumber3 = 2
       $("#fav3").text(response[randomNumber3].mealname);
       $("#fav3").click(function () {
         let favoriteChosen = response[randomNumber3]
         displayer(favoriteChosen)
       })
 
-      let randomNumber4 = Math.floor(Math.random() * response.length)
+      let randomNumber4 = 3
       $("#fav4").text(response[randomNumber4].mealname);
       $("#fav4").click(function () {
         let favoriteChosen = response[randomNumber4]
         displayer(favoriteChosen)
       })
 
-      let randomNumber5 = Math.floor(Math.random() * response.length)
+      let randomNumber5 = 4
       $("#fav5").text(response[randomNumber5].mealname);
       $("#fav5").click(function () {
         let favoriteChosen = response[randomNumber5]
