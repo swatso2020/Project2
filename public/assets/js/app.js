@@ -1,5 +1,6 @@
 console.log('works')
 
+
 $("#search").click(function (event) {
   event.preventDefault();
   let userInput = $("#search-input").val();
@@ -270,7 +271,7 @@ $("#submit-btn").click(function (event) {
 
 
   let reviewText = $("#review-input").val();
-  $("#user-review").html(reviewText);
+  $("#user-review").html(`<b>Thank you for your review!</b> <br>` + reviewText);
 
 
 
