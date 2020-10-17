@@ -1,5 +1,6 @@
 console.log('works')
 
+
 $("#search").click(function (event) {
   event.preventDefault();
   let userInput = $("#search-input").val();
@@ -247,7 +248,8 @@ function saveRecipe() {
 
 
 $("#review").click(function (event) {
-  event.preventDefault();
+  // event.preventDefault();
+  $("#review-input").val("")
   document.getElementById("submit-btn").style.display = "inline";
   document.getElementById("review-input").style.display = "inline";
   document.getElementById("review-form").style.display = "block";
@@ -269,7 +271,7 @@ $("#submit-btn").click(function (event) {
 
 
   let reviewText = $("#review-input").val();
-  $("#user-review").html(reviewText);
+  $("#user-review").html(`<b>Thank you for your review!</b> <br>` + reviewText);
 
 
 
