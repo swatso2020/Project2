@@ -1,6 +1,8 @@
 require("dotenv").config();
 var express = require("express");
 
+const chalk = require('chalk');
+
 
 // Sets up the Express App
 // =============================================================
@@ -64,9 +66,9 @@ require("./routes/html-routes.js")(app);
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, 3306,function() {
-      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      console.log(chalk.bgYellow.black("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
-      PORT);
+      PORT));
     });
   });
   

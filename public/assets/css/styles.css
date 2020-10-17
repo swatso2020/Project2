@@ -3,13 +3,70 @@
     min-height: 50px;
 } */
 
+form.signup,
+form.login {
+  margin-top: 50px;
+  padding: 25px;
+
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-size: 100%;
+}
+
+.navbar {
+    background-color: cadetblue;
+    height: 90px;  
+}
+
+.navbar-header {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    text-shadow: #fff 2px 2px 5px;
+}
+
+.bg-salad {
+    /* background-image: url("https://images.unsplash.com/photo-1470549813517-2fa741d25c92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"); */
+    background-image: url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-shadow: #000 1px 1px 4px;
+    margin-top: 50px;
+    border-radius: .3rem;
+    padding: 25px;
+}
+
+h2 {
+    font-size: 36px;
+    color: white;
+    text-shadow: #000 1px 1px 4px;
+}
+
 .jumbotron {
     /* background-image: url("https://images.unsplash.com/photo-1470549813517-2fa741d25c92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"); */
     background-image: url("https://images.unsplash.com/photo-1563865436874-9aef32095fad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
     background-size: 100%;
+    margin-top: 50px;
     color: white;
     font-weight: bold;
+}
 
+.lead {
+    color: white;
 }
 
 .card-header {
@@ -23,7 +80,6 @@
 .review-card {
     height: auto;
     font-weight: 400;
-
 }
 
 .ingredient-card-title {
@@ -47,4 +103,22 @@
 
 #addIngredient {
     margin-left: -18px;
+}
+
+.jumbotron-contact{
+    background-image: url("https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: 100%;
+    margin-top: 50px;
+    color: white;
+    text-shadow: #000 1px 1px 4px;
+    font-weight: bold;
+    margin-top: 50px;
+    border-radius: .3rem;
+    padding: 50px;
+}
+
+.display-contact {
+    font-size: 50px;
+    text-decoration: underline;
+    text-shadow: cadetblue 2px 2px 5px;
 }

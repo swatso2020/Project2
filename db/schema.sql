@@ -14,4 +14,3 @@ from whatscookin_db.Ingridents
 
 --drop favorite meal table
 drop table whatscookin_db.favoriteMeals;
-drop table whatscookin_db.favoriteMeals;

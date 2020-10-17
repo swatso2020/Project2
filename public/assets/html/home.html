@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,26 +11,17 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <title>Home</title>
 </head>
+
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-md navbar-light bg-light"></nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1"></div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1>What's Cookin'</h1>
             </div>
+            <a href="/logout" class="btn btn-dark shadow">Logout</a>
+            <a href="/assets/html/contact.html" class="btn btn-warning shadow">Contact Us</a>
         </div>
-    </div>
+    </nav>
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">What's Cookin'?</h1>
@@ -38,48 +30,50 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="searchIngredients">SEARCH</label>
-                        <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken Breast" value="chicken">
+                        <input type="search" class="form-control" id="search-input" placeholder="Ex: Chicken">
                     </div>
-                    <button id="search" type="submit" class="btn btn-primary btn-lg">Search</button>
+                    <button id="search" type="submit" class="btn btn-primary btn-lg shadow">Search</button>
                 </div>
                 <div class="col-md-6 text-right">
                     <p>Need inspiration? Pull up a random recipe.</p>
                     <br><br>
-                    <a id="random-btn" class="btn btn-info btn-lg" href="#" role="button" onclick="randomRecipe()">Random</a>
+                    <a id="random-btn" class="btn btn-info btn-lg shadow" href="#" role="button"
+                        onclick="randomRecipe()">Random</a>
                 </div>
             </div>
             <br><br>
             <div id="searchResults">
                 <ul id="recipeList" class="list-group"></ul>
             </div>
-
             <div id="favorite-results" style="display: none;">
-                <ul id="favoriteList" class="list-group"><li class="list-group-item list-group-item-action">favorite1</li><li class="list-group-item list-group-item-action">favorite2</li></ul>
+                <ul id="favoriteList" class="list-group">
+                    <button class="btn btn-success btn-lg" id="fav1">
+                        <li class="list-group-item list-group-item-action">favorite1</li>
+                    </button>
+                    <button class="btn btn-warning btn-lg" id="fav2">
+                        <li class="list-group-item list-group-item-action">favorite2</li>
+                    </button>
+                    <button class="btn btn-primary btn-lg" id="fav3">
+                        <li class="list-group-item list-group-item-action">favorite3</li>
+                    </button>
+                    <button class="btn btn-info btn-lg" id="fav4">
+                        <li class="list-group-item list-group-item-action">favorite4</li>
+                    </button>
+                    <button class="btn btn-light btn-lg" id="fav5">
+                        <li class="list-group-item list-group-item-action">favorite5</li>
+                    </button>
+                </ul>
             </div>
             <br><br>
-            <!-- <div id="recipeDetail" style="display: none;">
-                <div class="card">
-                    <div id="recipeTitle" class="card-header">
-                        Recipe title
-                    </div>
-                    <div class="card-body">
-                        <div id="image-div"></div>
-                        <h5 id="ingredientsTitle" class="card-title">Ingredients List:</h5>
-                        <p id="ingredientsList" class="card-text-ingredients">... Ingredients Placeholder...</p>
-                        <h5 id="instructionsTitle" class="card-title">Instructions:</h5>
-                        <p id="instructions" class="card-text">Step-by-step instructions</p>
-                    </div>
-                </div>
-            </div> -->
             <div id="recipeDetail" style="display: none;">
                 <div class="card">
                     <div id="recipeTitle" class="card-header">
                         Recipe title
                     </div>
-
                     <div class="card-body">
-                        <button id="addToFavorites" class="btn favorite btn-primary btn-lg" data-meal="" role="button" onclick="saveRecipe()">Add to Favorites</button>
-                        <!-- <a id="nutrition" class="btn favorite btn-primary btn-lg" href="#" role="button">Add to Favorites</a> -->
+                        <button id="addToFavorites" class="btn btn-success btn-sm shadow" data-meal="" role="button"
+                            onclick="saveRecipe()">Add to Favorites</button>
+                        <br><br>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div id="image-div"></div>
@@ -87,67 +81,44 @@
                             <div class="col-sm-6">
                                 <h5 id="ingredientsTitle" class="ingredient-card-title">Ingredients List:</h5>
                                 <p class="card-text-ingredients">
-                                    <ul id="ingredientsList">
-                                        <!-- <li>800g Potatoes</li> 
-                                        <li>3 Onions</li>   
-                                        <li>2 tblsp Olive Oil</li>  
-                                        <li>100ml Chicken Stock</li>    
-                                        <li>1 pot Creme Fraiche</li>
-                                        <li>Topping Parmesan</li>   
-                                        <li>4 Chicken Breasts</li>  
-                                        <li>4 Bacon</li>    
-                                        <li>Topping Spinach</li>    
-                                        <li>Topping Peas</li>
-                                    </ul> -->
+                                <ul id="ingredientsList">
+                                </ul>
                                 </p>
                             </div>
                         </div>
                         <h5 id="instructionsTitle" class="card-title">Instructions:</h5>
-                        <p id="instructions" class="card-text">Step-by-step instructions</p>  
+                        <p id="instructions" class="card-text">Step-by-step instructions</p>
                     </div>
                 </div>
             </div>
             <br>
-<div id="review-button">
-            <p class="lead">
-                <a style="display:none;" id="review" class="btn btn-primary btn-lg" href="#" role="button">Leave A Review</a>
-                <a id="faves" class="btn btn-primary btn-lg" href="#" role="button">View My Favorites</a>
-                <a id="add" class="btn btn-primary btn-lg" href="/assets/html/recipe.html" role="button">Add A Recipe</a>
-            </p>
-            
-        </div>
+            <div id="review-button">
+                <p class="lead">
+                    <a style="display:none;" id="review" class="btn btn-primary btn-lg" href="#" role="button">Leave A
+                        Review</a>
+                    <a id="faves" class="btn btn-warning btn-lg shadow" href="#" role="button">View My Favorites</a>
+                    <a id="add" class="btn btn-success btn-lg shadow" href="/assets/html/recipe.html" role="button">Add
+                        A
+                        Recipe</a>
+                </p>
+            </div>
             <div class="row" id="review-form" style="display:none;">
                 <div class="col-md-6">
                     <div id="review-div" class="form-group">
-                        <textarea type="search" class="form-control" id="review-input" placeholder="Please leave your review"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea type="search" class="form-control" id="review-input"
+                            placeholder="Please leave your review" class="form-control" id="exampleFormControlTextarea1"
+                            rows="3"></textarea>
                     </div>
                     <button id="submit-btn" type="submit" class="btn btn-success btn-lg">Submit</button>
                 </div>
-              
-               
                 <div class="col-md-6">
-                <div id="review-text" class="review-card card" style="display: none;">
-                    <div class="card-body">
-                       <p id="user-review"></p>
-        
+                    <div id="review-text" class="review-card card" style="display: none;">
+                        <div class="card-body">
+                            <p id="user-review"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-       
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1"></div>
         </div>
     </div>
     <!-- Optional JavaScript -->
@@ -163,7 +134,8 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<script src="/assets/js/app.js"></script>-->
-    <script src="/assets/js/test.js"></script>
-   
+
+    <script src="/assets/js/app.js"></script>
 </body>
+
 </html>
