@@ -70,15 +70,15 @@ $("#dishSubmitted").click(function (e) {
     if (document.querySelectorAll("#inlineFormAmount")[i] ||
       document.querySelectorAll("#inlineFormIngredient")[i]) {
       //alert("Thank you! Your dish has been submitted.");
-    //window.location.replace("/home");
+      //window.location.replace("/home");
       usersIngredients["measure" + i] = document.querySelectorAll("#inlineFormAmount")[i].value;
       usersIngredients["mealIngr" + i] = document.querySelectorAll("#inlineFormIngredient")[i].value;
 
-     
+
 
 
     } else {
-//alert("Please fill in any empty forms.")
+      //alert("Please fill in any empty forms.")
       break;
     }
 
