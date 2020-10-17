@@ -308,7 +308,7 @@ function getFavorites() {
       $("#fav2").text(response[1].mealname);
 
 
-// Displaying favorite1
+      // Displaying favorite1
       $("#fav1").click(function () {
         console.log(response[0]);
         $("#image-div").empty();
@@ -338,7 +338,7 @@ function getFavorites() {
           let itemText = ingredients[i].name;
           ingredientItem.html(itemText);
           $("#ingredientsList").append(ingredientItem);
-      
+
         }
         //  //show the favorites button, so the user is able to save another favorite
         $('#addToFavorites').show()
@@ -349,10 +349,10 @@ function getFavorites() {
           .attr("src", foodImg).addClass("food-image");
         document.getElementById("recipeDetail").style.display = "block";
         document.getElementById("review").style.display = "inline";
-      $("#image-div").append();
+        $("#image-div").append();
 
-       $("#recipeTitle").html(response[0].mealname);
-        
+        $("#recipeTitle").html(response[0].mealname);
+
         $("#instructions").html(response[0].mealInstr);
 
         //hiding and showing review, favorites and add recipe data
@@ -360,14 +360,14 @@ function getFavorites() {
         document.getElementById("submit-btn").style.display = "none";
         document.getElementById("faves").style.display = "inline";
         document.getElementById("add").style.display = "inline";
-        document.getElementById("review-text").style.display="none";
+        document.getElementById("review-text").style.display = "none";
 
 
 
-       
-        
+
+
       });
-// End of displaying favorite2
+      // End of displaying favorite2
       $("#fav2").click(function () {
         console.log(response[1]);
         $("#image-div").empty();
@@ -397,7 +397,7 @@ function getFavorites() {
           let itemText = ingredients[i].name;
           ingredientItem.html(itemText);
           $("#ingredientsList").append(ingredientItem);
-      
+
         }
         //  //show the favorites button, so the user is able to save another favorite
         $('#addToFavorites').show()
@@ -408,10 +408,10 @@ function getFavorites() {
           .attr("src", foodImg).addClass("food-image");
         document.getElementById("recipeDetail").style.display = "block";
         document.getElementById("review").style.display = "inline";
-      $("#image-div").append();
+        $("#image-div").append();
 
-       $("#recipeTitle").html(response[1].mealname);
-        
+        $("#recipeTitle").html(response[1].mealname);
+
         $("#instructions").html(response[1].mealInstr);
 
         //hiding and showing review, favorites and add recipe data
@@ -419,7 +419,7 @@ function getFavorites() {
         document.getElementById("submit-btn").style.display = "none";
         document.getElementById("faves").style.display = "inline";
         document.getElementById("add").style.display = "inline";
-        document.getElementById("review-text").style.display="none";
+        document.getElementById("review-text").style.display = "none";
 
       });
 
