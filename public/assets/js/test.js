@@ -28,8 +28,8 @@ function ajaxCallSearch(userInput) {
       for (let j = 0; j < 3; j++) {
 
 
-        console.log(result.meals[j].strMeal);
-        console.log(result.meals[j].idMeal);
+        // console.log(result.meals[j].strMeal);
+        // console.log(result.meals[j].idMeal);
         let randomNumber = [Math.floor(Math.random() * 11)]
         let mealTile = $("<a>");
         let mealName = result.meals[randomNumber].strMeal;
@@ -39,14 +39,15 @@ function ajaxCallSearch(userInput) {
         mealTile.addClass("list-group-item list-group-item-action");
         mealTile.html(mealName);
         mealTile.attr("onclick", "ajaxCallRecipe('" + mealID + "')");
-
         // https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}
 
         $("#recipeList").append(mealTile);
-        console.log("this is the ajax call seacrh function")
-        console.log(mealName)
-
+        // console.log(mealtile)
+        // console.log(mealName)
+        // console.log(mealID)
+      
       }
+     
     }
   });
 }
@@ -57,10 +58,6 @@ function ajaxCallRecipe(mealID) {
       $.ajax({
 
         url: ajaxCall, success: function (result) {
-       
-
-         
-         
           $("#image-div").empty();
           //show the favorites button, so the user is able to save another favorite
           $('#addToFavorites').show()
@@ -85,14 +82,15 @@ function ajaxCallRecipe(mealID) {
               })
             }
           }
-         
           renderIngredients(ingredients);
-
+         
           //Object to store response from results. When the favorites button is clicked, this will be sent to db
+          $('#addToFavorites').click(function(){
           var userRecipies = {
             mealid: result.meals[0].idMeal,
             mealname: result.meals[0].strMeal,
             mealInstr: result.meals[0].strInstructions,
+            mealThumb: result.meals[0].strMealThumb,
             mealcategory: result.meals[0].strCategory,
             mealIngr1: result.meals[0].strIngredient1,
             mealIngr2: result.meals[0].strIngredient2,
@@ -105,18 +103,18 @@ function ajaxCallRecipe(mealID) {
             mealIngr9: result.meals[0].strIngredient9,
             mealIngr10: result.meals[0].strIngredient10
           };
+        
           //when add favorites is clicked userRecipies is sent to db and favorites button is hidden because user can just keep clicking
-          $('#addToFavorites').click(function(){
+         
             console.log(userRecipies)
             $("#addToFavorites").hide();
-           $.post('/api/favRecipie', userRecipies);
-
+           $.post('/api/favRecipie', userRecipies).then();
+           userRecipies={}
           });
         }
       })
 }
 function renderIngredients(ingredients){
-
     $("#ingredientsList").empty();
 
     for(let i = 0; i<ingredients.length; i++){
@@ -244,6 +242,7 @@ function saveRecipe() {
       var userRecipies = {
         mealid: response.meals[0].idMeal,
         mealname: response.meals[0].strMeal,
+        mealThumb: response.meals[0].strMealThumb,
         mealInstr: response.meals[0].strInstructions,
         mealcategory: response.meals[0].strCategory,
         mealIngr1: response.meals[0].strIngredient1,

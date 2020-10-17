@@ -89,6 +89,7 @@ module.exports = function(app) {
       mealname: req.body.mealname,
       mealcategory: req.body.mealcategory,
       mealVideo: req.body.mealVideo,
+      mealthumb:req.body.mealThumb,
       mealInstr:req.body.mealInstr,
       mealIngr1:req.body.mealIngr1,
       mealIngr2:req.body.mealIngr2,
@@ -109,7 +110,7 @@ module.exports = function(app) {
       mealIngr17:req.body.mealIngr17,
       mealIngr18:req.body.mealIngr18,
       mealIngr19:req.body.mealIngr19,
-      mealIngr19:req.body.mealIngr20
+      mealIngr20:req.body.mealIngr20,
     }).then(function(results) {
       res.json(results);
     });
@@ -176,6 +177,17 @@ module.exports = function(app) {
       res.json(results);
     });
   });
+
+  // app.get("/api/test", function(req, res) {
+  //   console.log(req.body)
+  //   db.favoriteMeal.findAll({where:{mealIngr1 = "butter"}}).then(function(results) {
+  //     res.json(results);
+  //   });
+  // });
+
+  
+
+ 
 
 };
 

@@ -20,6 +20,12 @@
     color: black;
 }
 
+.review-card {
+    height: auto;
+    font-weight: 400;
+
+}
+
 .ingredient-card-title {
     margin-top: -15px;
 }
@@ -27,7 +33,6 @@
 .food-image {
     width: 70%;
     height: auto;
-   
     margin-bottom: 15px;
     border-radius: 3%;
 }
@@ -38,4 +43,8 @@
     font-size: 15px;
     font-weight: bold;
     background-color:  #0275d8;
+}
+
+#addIngredient {
+    margin-left: -18px;
 }
