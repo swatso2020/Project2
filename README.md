@@ -7,6 +7,9 @@ Combining the power of TheMealDB API and a Sequelize database, What's Cookin' wi
 ### User Story
 As a home cook, I would like to be able to search for new recipes and save the ones I really enjoy.
 
+## App Deployed on Heroku:
+https://infinite-falls-09874.herokuapp.com/
+
 ## Visuals
 Sign In Page:
 ![Screenshot (87)](https://user-images.githubusercontent.com/62854999/96531254-3674a180-1257-11eb-98aa-5c71087c1384.png)
