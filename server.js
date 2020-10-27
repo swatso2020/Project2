@@ -1,12 +1,20 @@
 require("dotenv").config();
-var express = require("express");
+//var express = require("express");
 
 const chalk = require('chalk');
+
+var compression = require('compression');
+var express = require('express');
+ 
+var app = express()
+ 
+// compress all responses
+app.use(compression());
 
 
 // Sets up the Express App
 // =============================================================
-var app = express();
+//var app = express();
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 const cors = require('cors');
@@ -57,8 +65,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Static directory
 app.use(express.static('public'));
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+require("./Routes/api-routes.js")(app);
+require("./Routes/html-routes.js")(app);
 
 
 
